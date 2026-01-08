@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account - AA & Co</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: white; /* Matching background color with other pages */
+            color: #333; /* Text color to contrast against background */
+            font-family: Arial, sans-serif;
+        }
+        .account-container {
+            margin: 20px auto;
+            max-width: 600px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+        }
+        .account-header {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: rgb(6, 128, 87); /* Match header color with links */
+            margin-bottom: 20px;
+        }
+        .account-banner {
+            background-color: #f9c74f; /* Yellow banner background */
+            color: #333;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 1rem;
+        }
+        .account-details {
+            list-style: none;
+            padding: 0;
+        }
+        .account-details li {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        .account-details li:last-child {
+            border-bottom: none;
+        }
+        .account-details li a {
+            color: rgb(6, 128, 87); /* Consistent link color */
+            text-decoration: none;
+        }
+        .account-details li a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body class="p-3 m-0 border-0">
+    <!-- Navbar -->
+    <ul class="nav justify-content-end">
+        <li class="nav-item">
+            <a class="nav-link" href="home.html" style="color: rgb(6, 128, 87)">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="categories.html" style="color: rgb(6, 128, 87)">Categories</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="myaccount.html" style="color: rgb(6, 128, 87)">My Account</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="cart.html" style="color: rgb(6, 128, 87)">Add to Cart</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="wishlist.html" style="color: rgb(6, 128, 87)">Wish List</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="about.html" style="color: rgb(6, 128, 87)">About Us</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="help.html" style="color: rgb(6, 128, 87)">Help</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="logout.html" style="color: rgb(6, 128, 87)">Logout</a>
+        </li>
+    </ul>
+    <nav class="navbar navbar-light bg-body-tertiary">
+        <div class="container-fluid">
+            <form class="d-flex input-group w-auto" onsubmit="searchAbout(event)">
+                <input
+                    id="searchInput"
+                    type="search"
+                    class="form-control rounded"
+                    placeholder="Search About Us"
+                    aria-label="Search"
+                />
+                <span class="input-group-text border-0"><i class="fas fa-search"></i></span>
+            </form>
+        </div>
+    </nav>
+
+
+    <!-- My Account Content -->
+    <div class="container account-container">
+        <div class="account-header">Settings</div>
+        <div class="account-banner">
+            Join AA & Co+ for $1.99 - Exclusive member benefits including custom shopping perks and more!
+        </div>
+        <!-- <ul class="account-details">
+            <li>
+                <span>Name</span>
+                <span>Madhu Mitha</span>
+            </li>
+            <li>
+                <span>Username</span>
+                <span>madhuumithaaa</span>
+            </li>
+            <li>
+                <span>Birthday</span>
+                <span>October 30, 2002</span>
+            </li>
+            <li>
+                <span>Mobile Number</span>
+                <span>088674 14459</span>
+            </li>
+            <li>
+                <span>Email</span>
+                <span>sunmadz02@gmail.com</span>
+            </li>
+            <li>
+                <a href="#">Password</a>
+            </li>
+            <li>
+                <a href="#">Two-Factor Authentication</a>
+            </li>
+            <li>
+                <a href="#">Notifications</a>
+            </li>
+        </ul>
+    </div> -->
+    <!-- Account Section -->
+    <div class="account-container">
+        <div class="account-header">Account Details</div>
+        <ul class="account-details" id="account-details">
+            <!-- User details will be dynamically loaded here -->
+        </ul>
+    </div>
+
+    <script>
+        const aboutSections = [
+            { name: "About Us", description: "Learn about AA & Co, our mission, and our premium beauty and skincare products." },
+            { name: "Mission", description: "Delivering the best in beauty with sustainability and innovation." },
+            { name: "Products", description: "Luxurious perfumes, serums, and moisturizers to cater to your beauty needs." },
+            { name: "Sustainability", description: "Our focus on sustainability ensures eco-friendly and innovative solutions." },
+            { name: "Contact", description: "Reach out to us via social media or email for feedback or inquiries." }
+        ];
+
+        function searchAbout(event) {
+            event.preventDefault();
+
+            const query = document.getElementById("searchInput").value.toLowerCase();
+            const results = aboutSections.filter(section =>
+                section.name.toLowerCase().includes(query) ||
+                section.description.toLowerCase().includes(query)
+            );
+
+            displayAboutResults(results);
+        }
+
+        function displayAboutResults(results) {
+            const resultsContainer = document.getElementById("searchResults");
+            resultsContainer.innerHTML = "";
+
+            if (results.length === 0) {
+                resultsContainer.innerHTML = "<p>No results found.</p>";
+                return;
+            }
+
+            const resultHTML = results.map(result => `
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">${result.name}</h5>
+                        <p class="card-text">${result.description}</p>
+                    </div>
+                </div>
+            `).join("");
+
+            resultsContainer.innerHTML = resultHTML;
+            }
+    </script>
+
+    <!-- Footer -->
+    <footer class="text-center" style="background-color: rgb(139, 183, 150); color: rgb(242, 238, 238);">
+        <div class="footer-content">
+            <h3>AA & Co.</h3>
+            <p>Contact here:</p> 
+    
+            <div class="container p-4 pb-0">
+                <section class="mb-4">
+                    <a class="btn text-white btn-floating m-1" style="background-color: #3b5998;" href="https://www.facebook.com/login.php/" role="button">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a class="btn text-white btn-floating m-1" style="background-color: #55acee;" href="https://x.com/" role="button">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a class="btn text-white btn-floating m-1" style="background-color: #dd4b39;" href="https://www.google.com/" role="button">
+                        <i class="fab fa-google"></i>
+                    </a>
+                    <a class="btn text-white btn-floating m-1" style="background-color: #ac2bac;" href="https://www.instagram.com/accounts/login/" role="button">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a class="btn text-white btn-floating m-1" style="background-color: #0082ca;" href="https://www.linkedin.com/" role="button">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </section>
+            </div>
+    
+            <div class="text-center p-3" style="background-color: rgb(139, 183, 150); color: white;">
+                © 2024 Copyright:
+                <a class="text-white" href="#">All Copyright Reserved</a>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>

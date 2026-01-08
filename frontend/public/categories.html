@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories - AA & Co</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="homestyle.css" rel="stylesheet">
+    <style>
+        .brand-section {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .brand-logo {
+            width: 120px;
+            margin: 10px;
+        }
+        .card-img-top {
+        height: 200px; /* Fixed height for card images */
+        object-fit: cover; /* Ensures images fit proportionally */
+    }
+    .btn-primary {
+        background-color: rgb(6, 128, 87); /* Consistent button color */
+        border: none;
+    }
+    .btn-primary:hover {
+        background-color: #055f48;
+    }
+
+    .btn-secondary {
+            background-color: rgb(128, 128, 255);
+            border: none;
+        }
+        .btn-secondary:hover {
+            background-color: rgb(100, 100, 230);
+        }
+    
+    </style>
+</head>
+<body class="p-3 m-0 border-0">
+    <!-- Navbar -->
+    <ul class="nav justify-content-end">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="home.html" style="color: rgb(6, 128, 87)">Home</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="categories.html" style="color: rgb(6, 128, 87)">Categories</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="myaccount.html" style="color: rgb(6, 128, 87)">My Account</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="cart.html" style="color: rgb(6, 128, 87)">Add to Cart</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="wishlist.html" style="color: rgb(6, 128, 87)">Wish List</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="about.html" style="color: rgb(6, 128, 87)">About Us</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="help.html" style="color: rgb(6, 128, 87)">Help</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="logout.html" style="color: rgb(6, 128, 87)">Logout</a>
+    </li>
+      </ul>
+  
+      <nav class="navbar navbar-light bg-body-tertiary">
+        <div class="container-fluid">
+            <form class="d-flex input-group w-auto">
+                <input
+                    id="searchInput"
+                    type="search"
+                    class="form-control rounded"
+                    placeholder="Search"
+                    aria-label="Search"
+                    aria-describedby="search-addon"
+                />
+                <span class="input-group-text border-0" id="search-addon">
+                    <i class="fas fa-search"></i>
+                </span>
+            </form>
+        </div>
+    </nav>
+
+    <!-- Search Results Section -->
+    <div id="searchResults" class="mt-4"></div>
+
+    <!-- Categories Content -->
+    <div class="container mt-4">
+        <h2 class="text-center mb-4">Our Categories</h2>
+        <!-- Brand Logos -->
+        <div class="brand-section">
+            <img src="MAC.jpeg" alt="MAC" class="brand-logo">
+            <img src="Givenchy.jpeg" alt="Givenchy" class="brand-logo">
+            <img src="YSL.jpeg" alt="YSL" class="brand-logo">
+            <img src="COSRX.jpeg" alt="COSRX" class="brand-logo">
+        </div>
+
+        <!-- Products Grid -->
+        <!-- Products Grid -->
+    
+    <!-- Row 1 -->
+    <h3 class="text-center mt-5 mb-3">Beauty Insider Awards</h3>
+    <div class="row mb-5 product-grid">
+        <div class="col-md-4">
+            <div class="card h-100">
+                <img src="YSLPerfume.jpeg" class="card-img-top" alt="YSL Perfume">
+                <div class="card-body">
+                    <h5 class="card-title">YSL Perfume</h5>
+                    <p class="card-text">Experience the luxury of YSL's signature perfume, perfect for any occasion.</p>
+                    <p class="card-text"><strong>Price:</strong> $120</p>
+                </div>
+                <div class="card-footer text-center">
+                    <button class="btn btn-primary add-to-cart" data-name="YSL Perfume" data-price="120" data-img="YSLPerfume.jpeg">
+                        Add to Cart
+                    </button>
+                    <button class="btn btn-secondary add-to-wishlist" data-name="YSL Perfume" data-price="120" data-img="YSLPerfume.jpeg">
+                        Wishlist
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100">
+                <img src="BondingOil.jpeg" class="card-img-top" alt="Bonding Oil">
+                <div class="card-body">
+                    <h5 class="card-title">Bonding Oil</h5>
+                    <p class="card-text">Nourish your hair with this premium bonding oil for a silky-smooth finish.</p>
+                    <p class="card-text"><strong>Price:</strong> $45</p>
+                </div>
+                <div class="card-footer text-center">
+                    <button class="btn btn-primary add-to-cart" data-name="Bonding Oil" data-price="45" data-img="BondingOil.jpeg">
+                        Add to Cart
+                    </button>
+                    <button class="btn btn-secondary add-to-wishlist" data-name="Bonding Oil" data-price="45" data-img="BondingOil.jpeg">
+                        Wishlist
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100">
+                <img src="Dior.jpeg" class="card-img-top" alt="Dior Combo Pack">
+                <div class="card-body">
+                    <h5 class="card-title">Dior Combo Pack</h5>
+                    <p class="card-text">A luxurious Dior combo pack with all your beauty essentials in one.</p>
+                    <p class="card-text"><strong>Price:</strong> $180</p>
+                </div>
+                <div class="card-footer text-center">
+                    <button class="btn btn-primary add-to-cart" data-name="Dior Combo Pack" data-price="180" data-img="Dior.jpeg">
+                        Add to Cart
+                    </button>
+                    <button class="btn btn-secondary add-to-wishlist" data-name="Dior Combo Pack" data-price="180" data-img="Dior.jpeg">
+                        Wishlist
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Row 2 -->
+    <h3 class="text-center mt-5 mb-3">Most Searched</h3>
+    <div class="row mb-5 product-grid">
+        <div class="col-md-4">
+            <div class="card h-100">
+                <img src="OrdinarySerum.jpeg" class="card-img-top" alt="YSL Perfume">
+                <div class="card-body">
+                    <h5 class="card-title">Ordinary Toner </h5>
+                    <p class="card-text">The Ordinary Glycolic Acid Toner is a gentle exfoliating solution with 7% glycolic acid to improve skin texture and radiance.</p>
+                    <p class="card-text"><strong>Price:</strong> $25</p>
+                </div>
+                <div class="card-footer text-center">
+                    <button class="btn btn-primary add-to-cart" data-name="Ordinary Toner" data-price="25" data-img="OrdinarySerum.jpeg">
+                        Add to Cart
+                    </button>
+                    <button class="btn btn-secondary add-to-wishlist" data-name="Ordinary Toner" data-price="25" data-img="OrdinarySerum.jpeg">
+                        Wishlist
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100">
+                <img src="Dot and key sunscreen.jpeg" class="card-img-top" alt="Bonding Oil">
+                <div class="card-body">
+                    <h5 class="card-title">Dot & Key Sunscreen</h5>
+                    <p class="card-text">Dot & Key Tinted Sunscreen SPF 50+ offers sun protection with light coverage for a natural glow.</p>
+                    <p class="card-text"><strong>Price:</strong> $30</p>
+                </div>
+                <div class="card-footer text-center">
+                    <button class="btn btn-primary add-to-cart" data-name="Dot & Key Sunscreen" data-price="30" data-img="Dot and key sunscreen.jpeg">
+                        Add to Cart
+                    </button>
+                    <button class="btn btn-secondary add-to-wishlist" data-name="Dot & Key Sunscreen" data-price="30" data-img="Dot and key sunscreen.jpeg">
+                    Wishlist
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100">
+                <img src="MARS foundation.jpeg" class="card-img-top" alt="Dior Combo Pack">
+                <div class="card-body">
+                    <h5 class="card-title">MARS Foundation</h5>
+                    <p class="card-text">MARS Foundation offers versatile coverage and finishes, tailored for Indian skin tones.</p>
+                    <p class="card-text"><strong>Price:</strong> $49</p>
+                </div>
+                <div class="card-footer text-center">
+                    <button class="btn btn-primary add-to-cart" data-name="MARS Foundation" data-price="49" data-img="MARS foundation.jpeg">
+                        Add to Cart
+                    </button>
+                    <button class="btn btn-secondary add-to-wishlist" data-name="MARS Foundation" data-price="49" data-img="MARS foundation.jpeg">
+                        Wishlist
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h3 class="text-center mt-5 mb-3">Top Picks</h3>
+    <div class="row mb-5 product-grid">
+        <div class="col-md-4">
+            <div class="card h-100">
+                <img src="Laneige lip mask.jpeg" class="card-img-top" alt="YSL Perfume">
+                <div class="card-body">
+                    <h5 class="card-title">Laneige Lip Sleeping Mask</h5>
+                    <p class="card-text">Laneige Lip Sleeping Mask deeply hydrates and softens lips overnight.</p>
+                    <p class="card-text"><strong>Price:</strong> $17</p>
+                </div>
+                <div class="card-footer text-center">
+                    <button class="btn btn-primary add-to-cart" data-name="Laneige Lip Sleeping Mask" data-price="17" data-img="Laneige lip mask.jpeg">
+                        Add to Cart
+                    </button>
+                    <button class="btn btn-secondary add-to-wishlist" data-name="Laneige Lip Sleeping Mask" data-price="17" data-img="Laneige lip mask.jpeg">
+                        Wishlist
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100">
+                <img src="Cetaphil cleanser.jpeg" class="card-img-top" alt="Bonding Oil">
+                <div class="card-body">
+                    <h5 class="card-title">Cetaphil Gentle Cleanser</h5>
+                    <p class="card-text">Cetaphil Gentle Cleanser gently cleanses while hydrating and protecting sensitive skin.</p>
+                    <p class="card-text"><strong>Price:</strong> $35</p>
+                </div>
+                <div class="card-footer text-center">
+                    <button class="btn btn-primary add-to-cart" data-name="Cetaphil Gentle Cleanser" data-price="35" data-img="Cetaphil cleanser.jpeg">
+                        Add to Cart
+                    </button>
+                    <button class="btn btn-secondary add-to-wishlist" data-name="Cetaphil Gentle Cleanser" data-price="35" data-img="Cetaphil cleanser.jpeg">
+                        Wishlist
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100">
+                <img src="Kylie loose powder.jpeg" class="card-img-top" alt="Dior Combo Pack">
+                <div class="card-body">
+                    <h5 class="card-title">Kylie Loose Setting Powder</h5>
+                    <p class="card-text">Kylie Loose Setting Powder mattifies and blurs for a natural finish.</p>
+                    <p class="card-text"><strong>Price:</strong> $120</p>
+                </div>
+                <div class="card-footer text-center">
+                    <button class="btn btn-primary add-to-cart" data-name="Kylie Loose Setting Powder" data-price="120" data-img="Kylie loose powder.jpeg">
+                        Add to Cart
+                    </button>
+                    <button class="btn btn-secondary add-to-wishlist" data-name="Kylie Loose Setting Powder" data-price="120" data-img="Cetaphil cleanser.jpeg">
+                        Wishlist
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        
+        
+<<script>
+    // Array of product items
+    const products = [
+        { name: "YSL Perfume", description: "Luxury perfume for any occasion", price: 120 },
+        { name: "Bonding Oil", description: "Premium bonding oil for silky hair", price: 45 },
+        { name: "Dior Combo Pack", description: "Luxurious beauty essentials pack", price: 180 },
+        { name: "Ordinary Toner", description: "Gentle exfoliating solution for radiant skin", price: 25 },
+        { name: "Dot & Key Sunscreen", description: "SPF 50+ tinted sunscreen for sun protection", price: 30 },
+        { name: "MARS Foundation", description: "Foundation tailored for Indian skin tones", price: 49 },
+        { name: "Laneige Lip Sleeping Mask", description: "Hydrates and softens lips overnight", price: 17 },
+        { name: "Cetaphil Gentle Cleanser", description: "Gently cleanses and hydrates sensitive skin", price: 35 },
+        { name: "Kylie Loose Setting Powder", description: "Mattifies and blurs for a natural finish", price: 120 }
+    ];
+
+    // Function to handle search
+    function searchItems(event) {
+        event.preventDefault(); // Prevent form submission
+
+        const query = document.getElementById("searchInput").value.toLowerCase();
+        const results = products.filter(product =>
+            product.name.toLowerCase().includes(query) ||
+            product.description.toLowerCase().includes(query) ||
+            product.price.toString().includes(query)
+        );
+
+        displayResults(results);
+    }
+
+    // Function to display search results
+    function displayResults(results) {
+        const resultsContainer = document.getElementById("searchResults");
+        resultsContainer.innerHTML = ""; // Clear previous results
+
+        if (results.length === 0) {
+            resultsContainer.innerHTML = "<p>No results found.</p>";
+            return;
+        }
+
+        const resultHTML = results.map(result => `
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">${result.name}</h5>
+                    <p class="card-text">${result.description}</p>
+                    <p class="card-text"><strong>Price:</strong> $${result.price}</p>
+                </div>
+            </div>
+        `).join("");
+
+        resultsContainer.innerHTML = resultHTML;
+    }
+
+    // Attach event listener to the search bar form
+    document.querySelector("form").addEventListener("submit", searchItems);
+</script>
+
+        
+        
+<footer class="text-center" style="background-color: rgb(139, 183, 150); color: white;">
+    <div class="footer-content">
+        <h3>AA & Co.</h3>
+        <p>Contact here:</p> 
+
+        <div class="container p-4 pb-0">
+            <section class="mb-4">
+                <a class="btn text-white btn-floating m-1" style="background-color: #3b5998;" href="https://www.facebook.com/login.php/" role="button">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a class="btn text-white btn-floating m-1" style="background-color: #55acee;" href="https://x.com/" role="button">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a class="btn text-white btn-floating m-1" style="background-color: #dd4b39;" href="https://www.google.com/" role="button">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a class="btn text-white btn-floating m-1" style="background-color: #ac2bac;" href="https://www.instagram.com/accounts/login/" role="button">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a class="btn text-white btn-floating m-1" style="background-color: #0082ca;" href="https://www.linkedin.com/" role="button">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </section>
+        </div>
+
+        <div class="text-center p-3" style="background-color: rgb(139, 183, 150); color: white;">
+            © 2024 Copyright:
+            <a class="text-white" href="#">All Copyright Reserved</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

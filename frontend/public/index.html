@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ampan Aura & Co. - Login & Create Account</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" type="text/css" href="loginstyle.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #afbfae;
+            font-family: 'Arial', sans-serif;
+        }
+        .auth-container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: white;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: rgba(6, 128, 87);
+        }
+        .btn-auth {
+            background-color: rgba(6, 128, 87);
+            color: white;
+            border-radius: 25px; 
+        }
+        .btn-auth:hover {
+            background-color: rgba(6, 128, 87);
+        }
+        .error {
+             color: red;
+             font-size: 0.9em;
+             display: none;
+             text-align: left;
+             margin-top: -10px;
+             margin-bottom: 10px;
+        }
+        .form-control:focus {
+            border-color: rgba(6, 128, 87);
+            box-shadow: 0 0 5px rgba(36, 170, 83, 0.393);
+        }
+        .form-control.is-invalid {
+            border-color: #e53935; 
+        }
+        .form-control.is-valid {
+            border-color: #66bb6a; 
+        }
+        .toggle-link {
+            color: rgba(6, 128, 87);
+            cursor: pointer;
+        }
+        .invalid-feedback {
+            display: none;
+            font-size: 0.8em;
+        }
+        .is-invalid + .invalid-feedback {
+            display: block; 
+        }
+    </style> 
+
+</head>
+<body>
+
+<div class="auth-container">
+
+    <div id="loginForm" class="auth-form">
+        <h2>Login</h2>
+        <form id="loginFormElement" novalidate>
+            <div class="mb-3">
+                <label for="loginEmail" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="loginEmail" placeholder="Enter your email" required>
+                <div class="invalid-feedback">Please provide a valid Gmail address (e.g., user@gmail.com).</div>
+            </div>
+            <div class="mb-3">
+                <label for="loginPassword" class="form-label">Password</label>
+                <input type="password" class="form-control" id="loginPassword" placeholder="Enter your password" required minlength="6" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$#])[A-Za-z\d@$#]{6,}$">
+                <div class="invalid-feedback">Password must be at least 6 characters long and include letters, numbers, and special characters.</div>
+            </div>
+            <div class="d-grid">
+                <button type="submit" class="btn btn-auth">Login</button>
+            </div>
+            <p class="text-center mt-3">Don't have an account? <span class="toggle-link" onclick="showCreateAccount()">Create Account</span></p>
+        </form>
+    </div>
+
+
+    <div id="createAccountForm" class="auth-form" style="display: none;">
+        <h2>Create Account</h2>
+        <form id="createAccountFormElement" novalidate>
+            <div class="mb-3">
+                <label for="createName" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="createName" placeholder="Enter your full name" required pattern="^[A-Za-z\s]{3,20}$">
+                <div class="invalid-feedback">Please provide a valid name (3-20 characters, letters only).</div>
+            </div>
+            <div class="mb-3">
+                <label for="createEmail" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="createEmail" placeholder="Enter your email" required>
+                <div class="invalid-feedback">Please provide a valid Gmail address (e.g., user@gmail.com).</div>
+            </div>            
+            <div class="mb-3">
+                <label for="createPassword" class="form-label">Password</label>
+                <input type="password" class="form-control" id="createPassword" placeholder="Enter a password" required pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$#])[A-Za-z\d@$#]{6,}$">
+                <div class="invalid-feedback">Password must be at least 6 characters long, including letters, numbers, and special characters.</div>
+            </div>
+            <div class="mb-3">
+                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm your password" required minlength="6">
+                <div class="invalid-feedback">Passwords must match.</div>
+            </div>
+            <div class="mb-3">
+                <label for="dob" class="form-label">Date of Birth</label>
+                <input type="date" class="form-control" id="dob" required>
+                <div class="invalid-feedback">Please provide your date of birth.</div>
+            </div>
+            <div class="mb-3">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" id="phone" placeholder="123-456-7890" required pattern="^\d{3}-\d{3}-\d{4}$">
+                <div class="invalid-feedback">Please provide a valid phone number (format: 123-456-7890).</div>
+            </div>
+            <div class="d-grid">
+                <button type="submit" class="btn btn-auth">Create Account</button>
+            </div>
+            <p class="text-center mt-3">Already have an account? <span class="toggle-link" onclick="showLogin()">Login</span></p>
+        </form>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+
+    function showCreateAccount() {
+        document.getElementById('loginForm').style.display = 'none';
+        document.getElementById('createAccountForm').style.display = 'block';
+    }
+
+    function showLogin() {
+        document.getElementById('loginForm').style.display = 'block';
+        document.getElementById('createAccountForm').style.display = 'none';
+    }
+     
+    
+     function validateEmail(email) {
+        const regex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+        return regex.test(email);
+    }
+
+    function validateField(field) {
+        let isValid = field.validity.valid;
+        const errorDiv = field.nextElementSibling;
+
+        if (field.id === 'createEmail') {
+            isValid = validateEmail(field.value);
+        }
+
+        if (isValid) {
+            field.classList.remove('is-invalid');
+            field.classList.add('is-valid');
+            errorDiv.style.display = 'none'; 
+        } else {
+            field.classList.add('is-invalid');
+            field.classList.remove('is-valid');
+            errorDiv.style.display = 'block'; 
+        }
+    }
+
+    document.querySelectorAll('input').forEach(input => {
+        input.addEventListener('input', () => validateField(input));
+        input.addEventListener('blur', () => validateField(input));
+    });
+
+    document.getElementById('createAccountFormElement').addEventListener('submit', function(event) {
+        if (!this.checkValidity()) {
+            event.preventDefault(); 
+        }
+        this.classList.add('was-validated');
+    });
+
+    document.getElementById('loginFormElement').addEventListener('submit', function(event) {
+        event.preventDefault(); 
+
+        const email = document.getElementById('loginEmail').value;
+        const password = document.getElementById('loginPassword').value;
+
+        const storedEmail = localStorage.getItem('accountEmail');
+        const storedPassword = localStorage.getItem('accountPassword')
+
+        if (email === storedEmail && password === storedPassword) {
+            alert('Login successful!');
+            window.location.href = 'Home.html';
+        } else {
+            alert('Invalid email or password!');
+        }
+    });
+
+    document.getElementById('createAccountFormElement').addEventListener('submit', function(event) {
+        event.preventDefault(); 
+
+        const name = document.getElementById('createName').value;
+        const email = document.getElementById('createEmail').value;
+        const password = document.getElementById('createPassword').value;
+
+        if (!validateEmail(email)) {
+            alert('Please provide a valid Gmail address.');
+            return;
+        }
+
+        localStorage.setItem('accountEmail', email);
+        localStorage.setItem('accountPassword', password);
+
+        alert('Account created successfully!');
+        showLogin(); 
+    });
+
+</script>
+
+</body>
+</html>
