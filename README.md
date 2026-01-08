@@ -1,10 +1,10 @@
-# Ampan (AA) & Co — Full-Stack E-Commerce Website
+# Ampan (AA) & Co - Fullstack E-Commerce Website
 
 ## Overview
-Ampan (AA) & Co is a multi-role e-commerce website built for a beauty & skincare brand. The platform supports admin and customer workflows, product browsing, cart management, and checkout using PayPal sandbox payments. The UI is responsive across desktop and mobile views.
+Ampan (AA) & Co is a multi role e-commerce website built for a beauty & skincare brand. The platform supports admin and customer workflows, product browsing, cart management, and checkout using PayPal sandbox payments. The UI is responsive across desktop and mobile views.
 
 ## Key Features
-- Multi-role access (Admin / User)
+- Multi role access (Admin / User)
 - Product catalog with categories and detailed product pages
 - Cart and checkout workflow
 - PayPal sandbox payment integration
@@ -19,10 +19,10 @@ Ampan (AA) & Co is a multi-role e-commerce website built for a beauty & skincare
 - **Version Control:** Git/GitHub
 
 ## Repository Structure (Suggested)
-- `client/` — Frontend React application
-- `server/` — Backend Node/Express APIs
-- `docs/` — project documentation/screenshots
-- `assets/` — UI screenshots
+- `client/` - Frontend React application
+- `server/` - Backend Node/Express APIs
+- `docs/` - project documentation/screenshots
+- `assets/` - UI screenshots
 
 > Note: Folder names may differ depending on the original project structure.
 
