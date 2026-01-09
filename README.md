@@ -26,11 +26,33 @@ Ampan (AA) & Co is a multi role e-commerce website built for a beauty & skincare
 
 > Note: Folder names may differ depending on the original project structure.
 
-## How to Run (to be updated after code upload)
-1. Clone the repository
-2. Install dependencies for frontend and backend
-3. Configure environment variables (MongoDB URI, PayPal sandbox keys)
-4. Start backend and frontend locally
+## How to Run Locally
+
+### Prerequisites
+- Node.js (LTS recommended)
+- MongoDB (local or MongoDB Atlas)
+
+### 1) Backend (Express + MongoDB)
+cd Backend
+npm install
+
+Create a .env file inside Backend/ (use the provided template):
+cp .env.example .env
+
+Start the backend:
+npm start
+
+Backend runs on:
+http://localhost:5001
+
+### 2) Frontend (React)
+Open a new terminal:
+cd Frontend
+npm install
+npm start
+
+Frontend runs on:
+http://localhost:3000
 
 ## Screenshots (to be added)
 Add UI screenshots in `assets/` and embed them here for quick preview.
